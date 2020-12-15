@@ -1,13 +1,10 @@
 # main links links
 main:
-  - title: "Research Interests"
-    url: /interests/
-
-  - title: "Academia"
-    url: /academia/
+  - title: "Research"
+    url: /research/
     
   - title: "Entrepreneurship"
-    url: /entre/
+    url: /entrepreneurship/
     
   - title: "Full CV"
     url: /full-cv/
