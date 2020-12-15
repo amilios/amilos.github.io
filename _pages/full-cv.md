@@ -10,6 +10,10 @@ redirect_from:
 
 {% include base_path %}
 
+<style type="text/css" rel="stylesheet">
+h4 { padding-top: 2px; margin-top: 2px; }
+</style>
+
 You can view my full CV in PDF format [here](https://atmilios.com/files/full-cv.pdf).
 {: .notice}
 
