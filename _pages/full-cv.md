@@ -10,6 +10,9 @@ redirect_from:
 
 {% include base_path %}
 
+You can view my full CV in PDF format [here](https://atmilios.com/files/full-cv.pdf).
+{: .notice}
+
 ## Skills &amp; Abilities
 
 * deep learning and neural networks, specifically CNNs, RNNs, Attention-based networks,
