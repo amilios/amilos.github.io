@@ -1,7 +1,7 @@
 ---
 layout: archive
 title: "Entrepreneurship"
-permalink: /entre/
+permalink: /entrepreneurship/
 author_profile: true
 ---
 
