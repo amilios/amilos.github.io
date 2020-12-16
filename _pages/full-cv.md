@@ -38,7 +38,7 @@ HTML/CSS/JS)
 
 ### Fall 2019: Research Intern at Know-Center GmbH
 #### Graz, Austria
-* researched on active learning, recommender systems
+* researched active learning, recommender systems
 * advanced existing research project "Risk-ID", an interactive dataset labelling tool for network traffic data
 * implemented ML backend in Keras and Tensorflow, Attention-Layer-based visualization, Active-Learning mode of function
 * designed user study to evaluate effectiveness of changes to tool
