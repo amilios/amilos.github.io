@@ -28,7 +28,7 @@ HTML/CSS/JS)
 
 ## Teaching
 
-### Fall 2020: Teaching Assistant at Dalhousie University
+### Fall 2020: Teaching Assistant at [Dalhousie University](https://www.dal.ca/)
 #### Halifax, Nova Scotia, Canada
 * CSCI 3141 Foundations of Data Science using R, with Dr. Luis Torgo
 * CSCI 2170 Server-side Scripting, with Dr. Bonnie MacKay
@@ -36,19 +36,19 @@ HTML/CSS/JS)
 
 ## Work Experience
 
-### Fall 2019: Research Intern at Know-Center GmbH
+### Fall 2019: Research Intern at [Know-Center GmbH](https://www.know-center.tugraz.at/en/)
 #### Graz, Austria
 * researched active learning, recommender systems
 * advanced existing research project "Risk-ID", an interactive dataset labelling tool for network traffic data
 * implemented ML backend in Keras and Tensorflow, Attention-Layer-based visualization, Active-Learning mode of function
 * designed user study to evaluate effectiveness of changes to tool
 
-### Summer 2018, Winter 2019: Research Intern at MarineTraffic Inc./Dalhousie University
+### Summer 2018, Winter 2019: Research Intern at [MarineTraffic Inc.](https://www.marinetraffic.com/)/[Dalhousie University](https://www.dal.ca/)
 #### Athens, Greece
-* research collaboration between the Institute for Big Data Analytics at Dalhousie University and MarineTraffic Inc
+* research collaboration between the [Institute for Big Data Analytics at Dalhousie University](https://bigdata.cs.dal.ca/) and MarineTraffic Inc
 * did research involving fusion of AIS data streams and radar and optical-based satellite imagery for better maritime awareness
-* first and second internship as part of degree at Dalhousie, second internship co-funded by a MITACS Globalink Grant
-* resulted in presentation at CTFG workshop in Ottawa, a full paper at FUSION 2019 Conference, and a full paper at the Maritime Situational Awareness Workshop in La Spezia, Italy
+* first and second internship as part of degree at Dalhousie, second internship co-funded by a [MITACS Globalink Grant](https://www.mitacs.ca/en/programs/globalink/globalink-research-award)
+* resulted in presentation at [CTFG workshop](http://www.ctfg.ca/) in Ottawa, a full paper at [FUSION 2019 Conference](https://www.fusion2019.org/program.html), and a full paper at the [Maritime Situational Awareness Workshop](https://www.cmre.nato.int/msaw-2019-home) in La Spezia, Italy
 
 ## Education
 
@@ -62,22 +62,22 @@ Entrepreneurship (Faculty of Management), through the Entrepreneurial Skills Pro
 
 ## Leadership
 
-### Co-president, Dalhousie Entrepreneurship Society
+### Co-president, [Dalhousie Entrepreneurship Society](https://www.facebook.com/dalentsoc/)
 * introduced series of workshops on entrepreneurship and design thinking concepts, open to students of all faculty, with the support of the NNCE/Faculty of Management
 
-### Stanford University Innovation Fellow for Dalhousie
+### Stanford [University Innovation Fellow](https://universityinnovationfellows.org/) for Dalhousie
 * passed through rigorous 2-month online training, then 4-day conference in Silicon Valley
 (Stanford Campus and Google headquarters) to meet all other Fellows from all over the
 world
 * funded by the NNCE
 
-### SHAD Fellow
+### [SHAD](https://www.shad.ca/) Fellow
 
 ## Volunteering
 
-* Co-founder and Program Coordinator, Hoist Halifax
-* Guest Speaker, Refresh Annapolis Valley
-* Youth Entrepreneurship Speaker, YES Atlantic Conference
+* Co-founder and Program Coordinator, [Hoist Halifax](https://voltaeffect.com/programs/hoist/)
+* Guest Speaker, [Refresh Annapolis Valley](https://refreshannapolisvalley.org/)
+* Youth Entrepreneurship Speaker, [YES Atlantic Conference](https://www.yes-atlantic.com/)
 
 ## Languages
 
