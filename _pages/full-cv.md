@@ -29,7 +29,7 @@ HTML/CSS/JS)
 ## Teaching
 
 ### Fall 2020: Teaching Assistant at Dalhousie University
-#### Halifax, Nova Scotia
+#### Halifax, Nova Scotia, Canada
 * CSCI 3141 Foundations of Data Science using R, with Dr. Luis Torgo
 * CSCI 2170 Server-side Scripting, with Dr. Bonnie MacKay
 * CSCI 2141 Intro to Database Systems, with Dr. Khurram Aziz
@@ -88,7 +88,7 @@ world
 ## Academic Publications
 
 * K. Bereta, A. Milios, K. Chatzikokolakis, and D. Zissis, "Monitoring Marine Protected Areas using Data Fusion and AI Techniques," NATO CMRE Maritime Situational Awareness
-Workshop, La Spezia, Italy, 2019. [Link](https://www.cmre.nato.int/msaw-2019-home/msaw2019-papers/) [Peer-Reviewed]
+Workshop, La Spezia, Italy, 8-10 October 2019. [Link](https://www.cmre.nato.int/msaw-2019-home/msaw2019-papers/) [Peer-Reviewed]
 * A. Milios, K. Bereta, K. Chatzikokolakis, D. Zissis and S. Matwin, "Automatic Fusion of Satellite Imagery and AIS data for Vessel Detection," 2019 22th International Conference on
 Information Fusion (FUSION), Ottawa, ON, Canada, 2-5 July 2019. [Link](https://ieeexplore.ieee.org/abstract/document/9011339) [Peer-Reviewed]
 
