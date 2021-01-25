@@ -30,7 +30,7 @@ HTML/CSS/JS)
 
 ### Fall 2020: Teaching Assistant at [Dalhousie University](https://www.dal.ca/)
 #### Halifax, Nova Scotia, Canada
-* CSCI 3141 Foundations of Data Science using R, with Dr. Luis Torgo
+* CSCI 3141 Foundations of Data Science using R, with [Dr. Luis Torgo](https://web.cs.dal.ca/~ltorgo/)
 * CSCI 2170 Server-side Scripting, with Dr. Bonnie MacKay
 * CSCI 2141 Intro to Database Systems, with Dr. Khurram Aziz
 
@@ -56,9 +56,9 @@ HTML/CSS/JS)
 #### First Class Honours with Co-op
 * accepted with a full scholarship, at a value of $41,900 CAD
 * graduated with First Class Honours and GPA of 4.13/4.3, in top 10% of class
-* wrote Honours Thesis on NLP topic (novel compact pre-trained BERT embedding)
-* Awarded Entrepreneurial Skills Certificate by the Norman Newman Centre for
-Entrepreneurship (Faculty of Management), through the Entrepreneurial Skills Program
+* wrote Honours Thesis on NLP topic (novel compact pre-trained BERT embedding), supervised by [Dr. Stan Matwin](https://web.cs.dal.ca/~stan/)
+* Awarded Entrepreneurial Skills Certificate by the [Norman Newman Centre for
+Entrepreneurship](https://www.dal.ca/faculty/management/nnce.html) (Faculty of Management), through the [Entrepreneurial Skills Program](https://academiccalendar.dal.ca/Catalog/ViewCatalog.aspx?pageid=viewcatalog&catalogid=105&chapterid=6420&loaduseredits=False)
 
 ## Leadership
 
