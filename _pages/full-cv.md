@@ -28,6 +28,10 @@ HTML/CSS/JS)
 
 ## Teaching
 
+### Winter 2021: Teaching Assistant at [Dalhousie University](https://www.dal.ca/)
+#### Halifax, Nova Scotia, Canada
+* CSCI 3162 Digital Media, with Dr. Dirk Arnold
+
 ### Fall 2020: Teaching Assistant at [Dalhousie University](https://www.dal.ca/)
 #### Halifax, Nova Scotia, Canada
 * CSCI 3141 Foundations of Data Science using R, with [Dr. Luis Torgo](https://web.cs.dal.ca/~ltorgo/)
@@ -35,6 +39,11 @@ HTML/CSS/JS)
 * CSCI 2141 Intro to Database Systems, with Dr. Khurram Aziz
 
 ## Work Experience
+
+### Winter 2021: Student Researcher at [Dalhousie University](https://www.dal.ca/)
+#### Halifax, Nova Scotia, Canada
+* Research assistantship with Dr. Luis Torgo, researching healthcare-related time series clustering and classification
+
 
 ### Fall 2019: Research Intern at [Know-Center GmbH](https://www.know-center.tugraz.at/en/)
 #### Graz, Austria
