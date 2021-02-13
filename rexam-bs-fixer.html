@@ -116,11 +116,12 @@
                 let course_code = document.getElementById('course_code').value;
 
                 if (course_code === '') {
-                    course_code = '130489-10822.202110';
+                    document.getElementById('message').innerText = 'Please input your course code from Brightspace! (Refresh first)';
+                    return;
                 }
 
                 if (!uploadedZip.name.endsWith('.zip')) {
-                    document.getElementById('message').innerText = 'Error! Please upload a zip';
+                    document.getElementById('message').innerText = 'Error! Please upload a zip!';
                 }
                 else {
                     document.getElementById('message').innerText = 'Success!';
