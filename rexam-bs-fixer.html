@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>R/exams Image Fixer for Brightspace</title>
+    <!--
+        Script for fixing images from zip files output from R/exams exam2blackboard
+        for Brigthspace/D2L learning management systems
+        Author: Aristides Milios atmilios.com
+        Licensed under GNU General Public License v3.0
+        see COPYING file for details
+    -->
+  </head>
+  <body>
+    <div class="container">
+        <br><br>
+        <h1>R/exams Image Fixer for Brightspace</h1>
+
+        <br><br>
+
+        <p>Please input the "course code" from the "Manage Files" section on Brightspace.</p>
+        <p>It should look something like "659403-58692.202120"</p>
+
+        <input type="text" id="course_code" size="50"/>
+
+        <br><br><br><br>
+
+        <p>Upload .zip from R/exams here:</p>
+        <input type="file" id="input">
+
+        <br><br>
+
+        <p id="message"></p>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.5.0/jszip.min.js" integrity="sha512-y3o0Z5TJF1UsKjs/jS2CDkeHN538bWsftxO9nctODL5W40nyXIbs0Pgyu7//icrQY9m6475gLaVr39i/uh/nLA==" crossorigin="anonymous"></script>
+        <script>
+            const inputElement = document.getElementById("input");
+            inputElement.addEventListener("change", handleFiles, false);
+
+            function fixDatFile(str_data, course_code) {
+
+                const FILE_TYPE_IMGS = '.png';
+
+                const orig_string = "@X@EmbeddedFile.requestUrlStub@X@bbcswebdav/supplements[0-9]+/";
+
+                const replacement_string = "/content/enforced/" + course_code + "/csfiles/";
+
+                const xid_string = '(xid-[0-9]+_[0-9]+)';
+
+                const re_orig = new RegExp(orig_string, 'g');
+                const xid_re = new RegExp(xid_string, 'g');
+
+                const count = (str) => {
+                    const re = new RegExp(re_orig, 'g');
+                    return ((str || '').match(re) || []).length
+                }
+
+                console.log('Num matches: ' + count(str_data));
+
+                new_str_data = str_data.replace(re_orig, replacement_string);
+
+                new_str_data = new_str_data.replace(xid_re, function (m) {
+                    return m + FILE_TYPE_IMGS;
+                })
+
+                return new_str_data;
+            }
+
+            async function fixImageLinks(zip, course_code) {
+                const RES_PREFIX_GLOB = "^res";
+                const HOME_DIR_GLOB = "^csfiles/home_dir/supplements[0-9]+";
+                const HOME_DIR = "csfiles/home_dir/";
+
+
+                const res_search = zip.file(new RegExp(RES_PREFIX_GLOB));
+
+                if (res_search.length !== undefined) {
+                    for (const file of res_search) {
+                        const str_data = await file.async("string");
+
+                        const fixed_str = fixDatFile(str_data, course_code);
+                        zip.file(file.name, fixed_str);
+                    }
+                }
+
+                const img_dir_search = zip.folder(new RegExp(HOME_DIR_GLOB));
+
+                if (res_search.length !== undefined) {
+                    for (const img_folder of img_dir_search) {
+                        const all_imgs_contained = zip.file(new RegExp('^' + img_folder.name + '.*'));
+                        for (const img_p of all_imgs_contained) {
+                            const str_data = await img_p.async("base64");
+                            const under_split = img_p.name.split("__");
+                            zip.file('csfiles/' + under_split[1], str_data, {
+                                'base64': true
+                            });
+                        }
+                    }
+                }
+
+                zip.remove('csfiles/home_dir/');
+
+                return zip;
+            }
+
+            async function handleFiles() {
+                const uploadedZip = this.files[0];
+
+                let course_code = document.getElementById('course_code').value;
+
+                if (course_code === '') {
+                    course_code = '130489-10822.202110';
+                }
+
+                if (!uploadedZip.name.endsWith('.zip')) {
+                    document.getElementById('message').innerText = 'Error! Please upload a zip';
+                }
+                else {
+                    document.getElementById('message').innerText = 'Success!';
+                    var zip = new JSZip();
+
+                    const old_zip = await zip.loadAsync(uploadedZip);
+
+                    const fixed_zip = await fixImageLinks(old_zip, course_code);
+
+                    fixed_zip.generateAsync({type:"blob"})
+                        .then(function(content) {
+                            saveAs(content, "fixed_" + uploadedZip.name);
+                        });
+                }
+            }
+        </script>
+    </div>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
