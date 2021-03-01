@@ -8,6 +8,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous"></script>
+
     <title>R/exams Image Fixer for Brightspace</title>
     <!--
         Script for fixing images from zip files output from R/exams exam2blackboard
@@ -44,6 +46,8 @@
             const inputElement = document.getElementById("input");
             inputElement.addEventListener("change", handleFiles, false);
 
+            let image_fn_mapping = {};
+
             function fixDatFile(str_data, course_code) {
 
                 const FILE_TYPE_IMGS = '.png';
@@ -67,7 +71,11 @@
                 new_str_data = str_data.replace(re_orig, replacement_string);
 
                 new_str_data = new_str_data.replace(xid_re, function (m) {
-                    return m + FILE_TYPE_IMGS;
+                    let randuid = uuid.v4();
+                    let newfn = randuid + '__' + m + FILE_TYPE_IMGS;
+                    let oldfn = m + FILE_TYPE_IMGS;
+                    image_fn_mapping[oldfn] = newfn;
+                    return newfn;
                 })
 
                 return new_str_data;
@@ -92,13 +100,16 @@
 
                 const img_dir_search = zip.folder(new RegExp(HOME_DIR_GLOB));
 
+                console.log(image_fn_mapping);
+
                 if (res_search.length !== undefined) {
                     for (const img_folder of img_dir_search) {
                         const all_imgs_contained = zip.file(new RegExp('^' + img_folder.name + '.*'));
                         for (const img_p of all_imgs_contained) {
                             const str_data = await img_p.async("base64");
                             const under_split = img_p.name.split("__");
-                            zip.file('csfiles/' + under_split[1], str_data, {
+
+                            zip.file('csfiles/' + image_fn_mapping[under_split[1]], str_data, {
                                 'base64': true
                             });
                         }
